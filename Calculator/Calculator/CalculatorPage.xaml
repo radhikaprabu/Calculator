@@ -3,6 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Calculator.CalculatorPage"
              Padding ="16">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="baseButtonStyle" TargetType="Button">
+        <Setter Property="FontSize" Value="Large" />
+      </Style>
+    
+      <Style x:Key="buttonStyle1" TargetType="Button"
+             BasedOn="{StaticResource baseButtonStyle}">
+        <Setter Property="TextColor" Value="Red" />
+      </Style>
+    
+      <Style x:Key="buttonStyle2" TargetType="Button"
+             BasedOn="{StaticResource baseButtonStyle}">
+        <Setter Property="TextColor" Value="Green" />
+        <Setter Property="FontAttributes" Value="Italic" />
+      </Style>
+    
+      <Style x:Key="buttonStyle3" TargetType="Button"
+             BasedOn="{StaticResource baseButtonStyle}">
+        <Setter Property="TextColor" Value="Blue" />
+        <Setter Property="FontAttributes" Value="Bold" />
+      </Style>
+    
+    </ResourceDictionary>
+  </ContentPage.Resources>
 
   <Grid>
     <Grid.RowDefinitions>
@@ -12,9 +37,11 @@
       <RowDefinition Height="*" />
       <RowDefinition Height="*" />
       <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
     </Grid.RowDefinitions>
 
     <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
       <ColumnDefinition Width="*" />
       <ColumnDefinition Width="*" />
       <ColumnDefinition Width="*" />
@@ -28,23 +55,27 @@
            Grid.Row="0"
            Grid.ColumnSpan="4" />
   
-    <Button Text="7" Grid.Row="1" Grid.Column="0" Font="Large" Clicked="OnDigitButtonClicked"/>
-    <Button Text="8" Grid.Row="1" Grid.Column="1" Font="Large" Clicked="OnDigitButtonClicked"/>
-    <Button Text="9" Grid.Row="1" Grid.Column="2" Font="Large" Clicked="OnDigitButtonClicked"/>
-    <Button Text="\" Grid.Row="1" Grid.Column="3" Font="Large" Clicked="OnOperationButtonClicked"/>
-    <Button Text="4" Grid.Row="2" Grid.Column="0" Font="Large" Clicked="OnDigitButtonClicked"/>
-    <Button Text="5" Grid.Row="2" Grid.Column="1" Font="Large" Clicked="OnDigitButtonClicked"/>
-    <Button Text="6" Grid.Row="2" Grid.Column="2" Font="Large" Clicked="OnDigitButtonClicked"/>
-    <Button Text="*" Grid.Row="2" Grid.Column="3" Font="Large" Clicked="OnOperationButtonClicked"/>
-    <Button Text="1" Grid.Row="3" Grid.Column="0" Font="Large" Clicked="OnDigitButtonClicked"/>
-    <Button Text="2" Grid.Row="3" Grid.Column="1" Font="Large" Clicked="OnDigitButtonClicked"/>
-    <Button Text="3" Grid.Row="3" Grid.Column="2" Font="Large" Clicked="OnDigitButtonClicked"/>
-    <Button Text="-" Grid.Row="3" Grid.Column="3" Font="Large" Clicked="OnOperationButtonClicked"/>
-    <Button Text="." Grid.Row="4" Grid.Column="0" Font="Large" Clicked="OnDigitButtonClicked"/>
-    <Button Text="0" Grid.Row="4" Grid.Column="1" Font="Large" Clicked="OnDigitButtonClicked"/>
-    <Button Text="=" Grid.Row="4" Grid.Column="2" Font="Large" Clicked="OnEqualButtonClicked"/>
-    <Button Text="+" Grid.Row="4" Grid.Column="3" Font="Large" Clicked="OnOperationButtonClicked"/>
-    <Button Text="CLR" Grid.Row="5" Grid.ColumnSpan="4" Font="Large" Clicked="OnClearButtonClicked"/>
+    <Button Text="7" Grid.Row="1" Grid.Column="0" Style="{DynamicResource buttonStyle}" Clicked="OnDigitButtonClicked"/>
+    <Button Text="8" Grid.Row="1" Grid.Column="1" Style="{DynamicResource buttonStyle}" Clicked="OnDigitButtonClicked"/>
+    <Button Text="9" Grid.Row="1" Grid.Column="2" Style="{DynamicResource buttonStyle}" Clicked="OnDigitButtonClicked"/>
+    <Button Text="\" Grid.Row="1" Grid.Column="3" Style="{DynamicResource buttonStyle}" Clicked="OnOperationButtonClicked"/>
+    <Button Text="4" Grid.Row="2" Grid.Column="0" Style="{DynamicResource buttonStyle}" Clicked="OnDigitButtonClicked"/>
+    <Button Text="5" Grid.Row="2" Grid.Column="1" Style="{DynamicResource buttonStyle}" Clicked="OnDigitButtonClicked"/>
+    <Button Text="6" Grid.Row="2" Grid.Column="2" Style="{DynamicResource buttonStyle}" Clicked="OnDigitButtonClicked"/>
+    <Button Text="*" Grid.Row="2" Grid.Column="3" Style="{DynamicResource buttonStyle}" Clicked="OnOperationButtonClicked"/>
+    <Button Text="1" Grid.Row="3" Grid.Column="0" Style="{DynamicResource buttonStyle}" Clicked="OnDigitButtonClicked"/>
+    <Button Text="2" Grid.Row="3" Grid.Column="1" Style="{DynamicResource buttonStyle}" Clicked="OnDigitButtonClicked"/>
+    <Button Text="3" Grid.Row="3" Grid.Column="2" Style="{DynamicResource buttonStyle}" Clicked="OnDigitButtonClicked"/>
+    <Button Text="-" Grid.Row="3" Grid.Column="3" Style="{DynamicResource buttonStyle}" Clicked="OnOperationButtonClicked"/>
+    <Button Text="." Grid.Row="4" Grid.Column="0" Style="{DynamicResource buttonStyle}" Clicked="OnDigitButtonClicked"/>
+    <Button Text="0" Grid.Row="4" Grid.Column="1" Style="{DynamicResource buttonStyle}" Clicked="OnDigitButtonClicked"/>
+    <Button Text="=" Grid.Row="4" Grid.Column="2" Style="{DynamicResource buttonStyle}" Clicked="OnEqualButtonClicked"/>
+    <Button Text="+" Grid.Row="4" Grid.Column="3" Style="{DynamicResource buttonStyle}" Clicked="OnOperationButtonClicked"/>
+    <Button Text="CLR" Grid.Row="5" Grid.ColumnSpan="4" Style="{DynamicResource buttonStyle}" Clicked="OnClearButtonClicked"/>
+    <Button Text="Style1" Grid.Row="6" Grid.Column="0" Style="{DynamicResource buttonStyle}" Clicked="OnButton1Clicked" />
+    <Button Text="Style2" Grid.Row="6" Grid.Column="1" Style="{DynamicResource buttonStyle}" Clicked="OnButton2Clicked"/>
+    <Button Text="Style3" Grid.Row="6" Grid.Column="2" Style="{DynamicResource buttonStyle}" Clicked="OnButton3Clicked"/>
+    <Button Text="Reset" Grid.Row="6" Grid.Column="3" Style="{DynamicResource buttonStyle}" Clicked="OnResetButtonClicked"/>
   </Grid>
 
 </ContentPage>
